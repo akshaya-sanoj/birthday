@@ -129,12 +129,47 @@ export function SoundProvider({ children }) {
           tone(784, 0.2, 'triangle', 0.1, 0.2);
           break;
         case 'celebrate':
-          // little fanfare
-          tone(523, 0.15, 'triangle', 0.2, 0);
-          tone(659, 0.15, 'triangle', 0.2, 0.15);
-          tone(784, 0.15, 'triangle', 0.2, 0.3);
-          tone(1047, 0.4, 'triangle', 0.25, 0.45);
-          noise(0.2, 0.08, 0, 1500);
+          // Happy Birthday melody notes (Happy Birthday to You...)
+          {
+            const notes = [
+              { f: 261.63, dur: 0.25, d: 0.0 },  // C4
+              { f: 261.63, dur: 0.15, d: 0.28 }, // C4
+              { f: 293.66, dur: 0.4,  d: 0.45 }, // D4
+              { f: 261.63, dur: 0.4,  d: 0.9 },  // C4
+              { f: 349.23, dur: 0.4,  d: 1.35 }, // F4
+              { f: 329.63, dur: 0.8,  d: 1.8 },  // E4
+              
+              // Happy Birthday to You
+              { f: 261.63, dur: 0.25, d: 2.7 },  // C4
+              { f: 261.63, dur: 0.15, d: 2.98 }, // C4
+              { f: 293.66, dur: 0.4,  d: 3.15 }, // D4
+              { f: 261.63, dur: 0.4,  d: 3.6 },  // C4
+              { f: 392.00, dur: 0.4,  d: 4.05 }, // G4
+              { f: 349.23, dur: 0.8,  d: 4.5 },  // F4
+
+              // Happy Birthday dear Ma'am
+              { f: 261.63, dur: 0.25, d: 5.4 },  // C4
+              { f: 261.63, dur: 0.15, d: 5.68 }, // C4
+              { f: 523.25, dur: 0.4,  d: 5.85 }, // C5
+              { f: 440.00, dur: 0.4,  d: 6.3 },  // A4
+              { f: 349.23, dur: 0.4,  d: 6.75 }, // F4
+              { f: 329.63, dur: 0.4,  d: 7.2 },  // E4
+              { f: 293.66, dur: 0.8,  d: 7.65 }, // D4
+
+              // Happy Birthday to You
+              { f: 466.16, dur: 0.25, d: 8.5 },  // A#4
+              { f: 466.16, dur: 0.15, d: 8.78 }, // A#4
+              { f: 440.00, dur: 0.4,  d: 8.95 }, // A4
+              { f: 349.23, dur: 0.4,  d: 9.4 },  // F4
+              { f: 392.00, dur: 0.4,  d: 9.85 }, // G4
+              { f: 349.23, dur: 1.0,  d: 10.3 }  // F4
+            ];
+
+            notes.forEach((note) => {
+              tone(note.f, note.dur, 'triangle', 0.25, note.d);
+            });
+            noise(0.4, 0.05, 0, 1200);
+          }
           break;
         case 'spin':
           tone(200, 1.5, 'sawtooth', 0.06, 0, 600);

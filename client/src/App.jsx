@@ -9,9 +9,7 @@ import JourneyTimeline from './components/JourneyTimeline';
 import PhotoGallery from './components/PhotoGallery';
 import WisherVideos from './components/WisherVideos';
 import SurpriseBox from './components/SurpriseBox';
-import BalloonPop from './components/BalloonPopping';
 import WishWheel from './components/WishWheel';
-import ScratchCard from './components/ScratchCard';
 import StudentMessages from './components/StudentMessages';
 import BirthdayWishGenerator from './components/BirthdayWishGenerator';
 import CelebrationSection from './components/CelebrationSection';
@@ -87,9 +85,7 @@ export default function App() {
             <StudentMessages />
             <WisherVideos />
             <SurpriseBox />
-            <BalloonPop />
             <WishWheel />
-            <ScratchCard />
             <BirthdayWishGenerator />
             <CelebrationSection onConfetti={fireConfetti} />
             <BirthdayLetter />
